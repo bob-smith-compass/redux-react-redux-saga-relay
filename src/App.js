@@ -1,6 +1,7 @@
 import React from 'react';
 // import logo from './logo.svg';
 import './App.css';
+import Buttton from 'react-bootstrap/Button';
 
 
 function App(props) {
@@ -19,8 +20,8 @@ function App(props) {
     <>
     <h3>Redux</h3>
     <p>Redux State/Store {props.store.getState()}</p>
-    <button onClick={handleClick}>+</button>
-    <button onClick={handleClick}>-</button>
+    <Buttton onClick={handleClick} className="btn primary">+</Buttton>
+    <Buttton onClick={handleClick} className="btn primary">-</Buttton>
     
     </>
   );
