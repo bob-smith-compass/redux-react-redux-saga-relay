@@ -42,6 +42,11 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 `yarn add react-bootstrap bootstrap`
 
+### Theming
+
+[https://react-bootstrap.github.io/getting-started/theming/](https://react-bootstrap.github.io/getting-started/theming/)
+
+
 ## Available Scripts
 
 In the project directory, you can run:
