@@ -13,12 +13,12 @@ function App(props) {
 
   const handleClick = (e) => {
     if (e.target.innerHTML === "+") {
-      console.log(`Action: ${'INCREASE'}`);
-      props.store.dispatch({ type: 'INCREASE' });
+      console.log(`Action: ${'ADDDISEASE'}`);
+      props.store.dispatch({ type: 'ADDDISEASE', disease: 'Blood pressure' });
       setDisease(props.store.getState());
     } else if (e.target.innerHTML === "-") {
-      console.log(`Action: ${'INCREASE'}`);
-      props.store.dispatch({ type: 'DECREASE' });
+      console.log(`Action: ${'ADDSYMPTOM'}`);
+      props.store.dispatch({ type: 'ADDSYMPTOM' });
       setDisease(props.store.getState());
     }
   };
@@ -43,8 +43,8 @@ function App(props) {
       <Container style={{'border': 'solid 1px red'}}>
         <Row style={{'border': 'solid 1px blue'}}>
           <Col style={{'border': 'solid 1px green'}} className=".Col">
-            <h3>Redux</h3>
-            <p>Redux State/Store {JSON.stringify(props.store.getState())}</p>
+            <h3>Redux State/Store</h3>
+            <p>{JSON.stringify(props.store.getState())}</p>
           </Col>
           <Col style={{'border': 'solid 1px green'}} className=".Col">
             {JSON.stringify(disease)}

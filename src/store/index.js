@@ -37,9 +37,11 @@ let reducer = (state = defaultState , action) => {
     console.log(state);
     switch(action.type) {
         case 'ADDDISEASE':
-            return state.setState({diagnoses: state.diagnoses.push(action.disease)}); // todo: do not mutate state
+            // return state.setState({diagnoses: state.diagnoses.push(action.disease)}); // todo: do not mutate state
+            return {...state, diagnoses: [...state.diagnoses, action.disease] };  // done: now state is NOT MUTATED state.diagnoses.push(action.disease)
         case 'ADDSYMPTOM':
-            return state.setState({diagnoses: state.diagnoses.push(action.disease)}); // todo: do not mutate state
+            // return state.setState({diagnoses: state.diagnoses.push(action.disease)}); // todo: do not mutate state
+            return { ...state, diagnoses: state.diagnoses.indexOf(action.disease)===-1? [...state.diagnoses] : [...state.diagnoses].splice(state.diagnoses.indexOf(action.disease), 1) };
         default:
             return state;
     }
