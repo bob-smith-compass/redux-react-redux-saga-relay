@@ -1,14 +1,6 @@
 # Redux
 
-# redux
-
 need both `redux` and `react-redux`
-
-
-
-# react-redux
-
-`npm install react-redux`
 
 1. import { createStore } from 'redux'
 
@@ -25,18 +17,36 @@ Redux itself is small and `unopinionated`. We also have a separate package calle
 
 It helps simplify a lot of common use cases, including store setup, creating reducers and writing immutable update logic, and even creating entire "slices" of state at once.
 
-
 The whole state of your app is stored in an `object tree` inside a single store.
 The `only way` to change the `state` tree is to emit an `action`, an `object` describing what happened.
 To specify how the actions transform the state tree, you write pure `reducers`.
 
+### Motivation
+
+As the requirements for JavaScript single-page applications have become increasingly complicated, our code must manage more state than ever before. This state can include server responses and cached data, as well as locally created data that has not yet been persisted to the server. UI state is also increasing in complexity, as we need to manage active routes, selected tabs, spinners, pagination controls, and so on.
+
+As if this weren't bad enough, consider the `new requirements becoming common in front-end product development`. As developers, we are expected to handle optimistic updates, server-side rendering, fetching data before performing route transitions, and so on. We find ourselves trying to manage a complexity that we have never had to deal with before, and we inevitably ask the question: is it time to give up? The answer is no.
+
+This complexity is difficult to handle as we're mixing two concepts that are very hard for the human mind to reason about: `mutation and asynchronicity`. I call them Mentos and Coke. Both can be great in separation, but together they create a mess. Libraries like React attempt to solve this problem in the view layer by removing both `asynchrony` and `direct DOM manipulation`. However, `managing the state` of your data is left up to you. This is where `Redux` enters.
+
+[https://martinfowler.com/eaaDev/EventSourcing.html](https://martinfowler.com/eaaDev/EventSourcing.html)
+Following in the steps of Flux, CQRS, and Event Sourcing, Redux attempts to make state mutations predictable by imposing certain restrictions on how and when updates can happen. These restrictions are reflected in the three principles of Redux.
 
 
 
 
+## React Redux
 
+### react-redux
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Complementary Packages
+Most likely, you'll also need the React bindings and the developer tools.
+
+`npm install react-redux`
+`npm install --save-dev redux-devtools`
+
+Note that unlike Redux itself, many packages in the Redux ecosystem don't provide UMD builds, so we recommend using CommonJS module bundlers like Webpack and Browserify for the most comfortable development experience.
+[https://redux.js.org/introduction/installation](https://redux.js.org/introduction/installation)
 
 ## Styles
 
@@ -69,7 +79,13 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
       </Button >
 ```
 
+### Prefixing components
+
+In some cases you may need to change the base class "prefix" of one or more Components. You can control how a Component prefixes it's classes locally by changing the bsPrefix prop. Or globally via the ThemeProvider Component. [https://react-bootstrap.github.io/getting-started/theming/](https://react-bootstrap.github.io/getting-started/theming/)
+
 ## Available Scripts
+
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 In the project directory, you can run:
 
