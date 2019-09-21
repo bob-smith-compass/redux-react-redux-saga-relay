@@ -31,3 +31,12 @@
     transform: rotate(360deg);
   }
 }
+Container {
+  border: solid 1px blue;
+}
+Row {
+  border: solid 1px gray;
+}
+Col {
+  border: solid 1px green;
+}
