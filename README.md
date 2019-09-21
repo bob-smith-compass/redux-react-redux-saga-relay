@@ -46,6 +46,28 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 [https://react-bootstrap.github.io/getting-started/theming/](https://react-bootstrap.github.io/getting-started/theming/)
 
+```language=javascrip
+<style type="text/css">
+            {`
+        .btn-flat {
+        background-color: purple;
+        color: white;
+        }
+
+        .btn-xxl {
+        padding: 1rem 1.5rem;
+        font-size: 1.5rem;
+        }
+        `}
+      </style>
+
+      <Button 
+        variant="flat" 
+        size="xxl" 
+        onClick={props.onClick}>
+        +
+      </Button >
+```
 
 ## Available Scripts
 
