@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 // import logo from './logo.svg';
 import './App.css';
 import Buttton from 'react-bootstrap/Button';
@@ -9,14 +9,17 @@ import ThemedButton from './components/themed-button/ThemedButton';
 
 
 function App(props) {
+  const [counter, setCounter] = useState(props.store.getState());
 
   const handleClick = (e) => {
     if (e.target.innerHTML === "+") {
       console.log(`Action: ${'INCREASE'}`);
       props.store.dispatch({ type: 'INCREASE' });
+      setCounter(props.store.getState());
     } else if (e.target.innerHTML === "-") {
       console.log(`Action: ${'INCREASE'}`);
       props.store.dispatch({ type: 'DECREASE' });
+      setCounter(props.store.getState());
     }
   };
 
@@ -37,23 +40,25 @@ function App(props) {
         `}
       </style>
 
-      <Container style={{'border': 'solid 1px gray'}}>
-        <Row>
-          <Col className=".Col">
+      <Container style={{'border': 'solid 1px red'}}>
+        <Row style={{'border': 'solid 1px blue'}}>
+          <Col style={{'border': 'solid 1px green'}} className=".Col">
             <h3>Redux</h3>
           </Col>
-          <Col className=".Col">
+          <Col style={{'border': 'solid 1px green'}} className=".Col">
             <p>Redux State/Store {props.store.getState()}</p>
+            {counter}
+            {/* <p>Subscribe State/Store {props.store.subscribe( ()=> setState(props.store.getState()))}</p> */}
           </Col>
         </Row>
-        <Row>
-          <Col className=".Col">
+        <Row style={{'border': 'solid 1px blue'}}>
+          <Col style={{'border': 'solid 1px green'}} className=".Col">
             <Buttton onClick={handleClick} >+</Buttton>
           </Col>
-          <Col className=".Col">
+          <Col style={{'border': 'solid 1px green'}} className=".Col">
             <Buttton onClick={handleClick} >-</Buttton>
           </Col>
-          <Col className=".Col">
+          <Col style={{'border': 'solid 1px green'}} className=".Col">
             <ThemedButton onClick={handleClick} >+</ThemedButton>
           </Col>
         </Row>
