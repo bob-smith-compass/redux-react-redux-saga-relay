@@ -9,17 +9,17 @@ import ThemedButton from './components/themed-button/ThemedButton';
 
 
 function App(props) {
-  const [counter, setCounter] = useState(props.store.getState());
+  const [disease, setDisease] = useState(props.store.getState());
 
   const handleClick = (e) => {
     if (e.target.innerHTML === "+") {
       console.log(`Action: ${'INCREASE'}`);
       props.store.dispatch({ type: 'INCREASE' });
-      setCounter(props.store.getState());
+      setDisease(props.store.getState());
     } else if (e.target.innerHTML === "-") {
       console.log(`Action: ${'INCREASE'}`);
       props.store.dispatch({ type: 'DECREASE' });
-      setCounter(props.store.getState());
+      setDisease(props.store.getState());
     }
   };
 
@@ -44,10 +44,10 @@ function App(props) {
         <Row style={{'border': 'solid 1px blue'}}>
           <Col style={{'border': 'solid 1px green'}} className=".Col">
             <h3>Redux</h3>
+            <p>Redux State/Store {JSON.stringify(props.store.getState())}</p>
           </Col>
           <Col style={{'border': 'solid 1px green'}} className=".Col">
-            <p>Redux State/Store {props.store.getState()}</p>
-            {counter}
+            {JSON.stringify(disease)}
             {/* <p>Subscribe State/Store {props.store.subscribe( ()=> setState(props.store.getState()))}</p> */}
           </Col>
         </Row>

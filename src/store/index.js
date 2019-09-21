@@ -30,15 +30,16 @@ let defaultState = {
                 symptoms[4],
                 symptoms[5]
             ]}
-    ]
+    ],
+    diagnoses: []
 };
 let reducer = (state = defaultState , action) => {
     console.log(state);
     switch(action.type) {
-        case 'INCREASE':
-            return state+1;
-        case 'DECREASE':
-            return state-1;
+        case 'ADDDISEASE':
+            return state.setState({diagnoses: state.diagnoses.push(action.disease)}); // todo: do not mutate state
+        case 'ADDSYMPTOM':
+            return state.setState({diagnoses: state.diagnoses.push(action.disease)}); // todo: do not mutate state
         default:
             return state;
     }
