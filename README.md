@@ -1,3 +1,41 @@
+# Redux
+
+# redux
+
+need both `redux` and `react-redux`
+
+
+
+# react-redux
+
+`npm install react-redux`
+
+1. import { createStore } from 'redux'
+
+## Learn Redux
+
+Redux is a predictable state container for JavaScript apps.
+
+It helps you write applications that behave consistently, run in different environments (client, server, and native), and are easy to test. On top of that, it provides a great developer experience, such as live code editing combined with a time traveling debugger.
+[https://redux.js.org/introduction/getting-started](https://redux.js.org/introduction/getting-started)
+You can use Redux together with React, or with any other view library.
+
+It is also available as a precompiled UMD package that defines a window.Redux global variable. The `UMD` package can be used as a <script> tag directly.
+Redux itself is small and `unopinionated`. We also have a separate package called `redux-starter-kit`, which includes some opinionated defaults that help you use Redux more effectively.
+
+It helps simplify a lot of common use cases, including store setup, creating reducers and writing immutable update logic, and even creating entire "slices" of state at once.
+
+
+The whole state of your app is stored in an `object tree` inside a single store.
+The `only way` to change the `state` tree is to emit an `action`, an `object` describing what happened.
+To specify how the actions transform the state tree, you write pure `reducers`.
+
+
+
+
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
