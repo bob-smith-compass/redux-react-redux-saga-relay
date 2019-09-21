@@ -22,23 +22,38 @@ function App(props) {
 
   return (
     <>
-      <Container>
+      <style type="text/css">
+        {`
+         .Container {
+          border: solid 1px blue;
+        }
+
+         .Row {
+          border: solid 1px green;
+        }
+         .Col {
+          border: solid 1px gray;
+        }
+        `}
+      </style>
+
+      <Container style={{'border': 'solid 1px gray'}}>
         <Row>
-          <Col>
+          <Col className=".Col">
             <h3>Redux</h3>
           </Col>
-          <Col>
+          <Col className=".Col">
             <p>Redux State/Store {props.store.getState()}</p>
           </Col>
         </Row>
         <Row>
-          <Col>
+          <Col className=".Col">
             <Buttton onClick={handleClick} >+</Buttton>
           </Col>
-          <Col>
+          <Col className=".Col">
             <Buttton onClick={handleClick} >-</Buttton>
           </Col>
-          <Col>
+          <Col className=".Col">
             <ThemedButton onClick={handleClick} >+</ThemedButton>
           </Col>
         </Row>
