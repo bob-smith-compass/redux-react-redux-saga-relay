@@ -6,6 +6,7 @@ import { createStore } from 'redux';
  */
 let defaultState = 0;
 let reducer = (state = defaultState , action) => {
+    console.log(state);
     switch(action.type) {
         case 'INCREASE':
             return state+1;
