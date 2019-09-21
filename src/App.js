@@ -6,6 +6,7 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import ThemedButton from './components/themed-button/ThemedButton';
+import Disease from './components/disease/Disease';
 
 
 function App(props) {
@@ -47,8 +48,8 @@ function App(props) {
             <p>{JSON.stringify(props.store.getState())}</p>
           </Col>
           <Col style={{'border': 'solid 1px green'}} className=".Col">
-            {JSON.stringify(disease)}
-            {/* <p>Subscribe State/Store {props.store.subscribe( ()=> setState(props.store.getState()))}</p> */}
+            {/* {JSON.stringify(disease)} */}
+            {disease.diagnoses.map( (e, i) => <Disease key={i} disease={e} />)}
           </Col>
         </Row>
         <Row style={{'border': 'solid 1px blue'}}>
