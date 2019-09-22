@@ -1,15 +1,18 @@
-import React from 'react';
+import React, {useState} from 'react';
 const fetch = require('node-fetch');
 
 const url = 'https://restcountries.eu/rest/v2/all';
 
 const RESTCall = () => {
-    let ldata = 'not yet';
+    const [countries, setCountries] = useState('not yet');
     const getData = () => {
         fetch('https://restcountries.eu/rest/v2/all').then( (res) => {
             console.log(res);
-            ldata = res.clone().json();
-            console.log(ldata);
+            // ldata = res.clone().json();
+            // console.log(ldata);
+            // setCountries(ldata);
+            // setCountries(res.clone().json());
+            setCountries({name: 'USA'});
         });
         /**
          * Streams
@@ -29,7 +32,7 @@ const RESTCall = () => {
     return (
         <div>
             {url}
-            <div>{ldata}</div>
+            <div>{countries}</div>
             <button onClick={getData}>fetch data</button>
         </div>
     );
