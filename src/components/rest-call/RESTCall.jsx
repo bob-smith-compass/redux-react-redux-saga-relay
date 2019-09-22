@@ -51,22 +51,31 @@ const RESTCall = () => {
       <Container>
         <Row>{url}</Row>
         <Row>
+          <span>Text area (regular)</span>
           <textarea value={JSON.stringify(countries)} onChange={handleChange} />
         </Row>
         <Row>
-        <Col>
-          <Button onClick={getData}>fetch data</Button>
-        </Col>
-        <Col>
-          <Form>
-            <Form.Group>
-              <Form.Control type="textarea"></Form.Control>
-            </Form.Group>
-            <Form.Group controlId="countiesForm.CountryTextArea">
-              <Form.Label>Countries</Form.Label>
-              <Form.Control as="textarea" rows="5" value={JSON.stringify(countries)} onChange={handleChange} />
-            </Form.Group>
-          </Form>
+          <Col>
+            <Form>
+              <Form.Group>
+                <Form.Control type="text"></Form.Control>
+                <Form.Control type="text"></Form.Control>
+              </Form.Group>
+            </Form>
+            <Button onClick={getData}>fetch data</Button>
+          </Col>
+          <Col>
+            <Form>
+              <Form.Group controlId="countiesForm.CountryTextArea">
+                <Form.Label>Countries</Form.Label>
+                <Form.Control
+                  as="textarea"
+                  rows="5"
+                  value={JSON.stringify(countries)}
+                  onChange={handleChange}
+                />
+              </Form.Group>
+            </Form>
           </Col>
         </Row>
       </Container>
