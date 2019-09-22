@@ -79,6 +79,14 @@ Note that unlike Redux itself, many packages in the Redux ecosystem don't provid
       </Button >
 ```
 
+## Style
+
+### Flex Box
+
+[https://css-tricks.com/snippets/css/a-guide-to-flexbox/](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
+
+### CSS Grid
+
 ### Prefixing components
 
 In some cases you may need to change the base class "prefix" of one or more Components. You can control how a Component prefixes it's classes locally by changing the bsPrefix prop. Or globally via the ThemeProvider Component. [https://react-bootstrap.github.io/getting-started/theming/](https://react-bootstrap.github.io/getting-started/theming/)
