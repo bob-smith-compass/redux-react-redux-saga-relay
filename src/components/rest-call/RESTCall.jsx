@@ -6,6 +6,7 @@ const url = 'https://restcountries.eu/rest/v2/all';
 const RESTCall = () => {
     const [countries, setCountries] = useState('not yet');
     const getData = () => {
+        setCountries({name: 'USA'});
         fetch('https://restcountries.eu/rest/v2/all').then( (res) => {
             console.log(res);
             // ldata = res.clone().json();
@@ -32,7 +33,7 @@ const RESTCall = () => {
     return (
         <div>
             {url}
-            <div>{countries}</div>
+            <div>{JSON.stringify(countries)}</div>
             <button onClick={getData}>fetch data</button>
         </div>
     );
