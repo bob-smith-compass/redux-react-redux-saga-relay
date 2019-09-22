@@ -7,6 +7,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import ThemedButton from './components/themed-button/ThemedButton';
 import Disease from './components/disease/Disease';
+import RESTCall from './components/rest-call/RESTCall';
 
 
 function App(props) {
@@ -62,6 +63,9 @@ function App(props) {
           <Col style={{'border': 'solid 1px green'}} className=".Col">
             <ThemedButton onClick={handleClick} >+</ThemedButton>
           </Col>
+        </Row>
+        <Row>
+          <RESTCall />
         </Row>
       </Container>
 
