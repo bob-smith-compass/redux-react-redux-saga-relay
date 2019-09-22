@@ -4,7 +4,6 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
-import { from } from 'rxjs';
 
 
 const fetch = require('node-fetch');
@@ -19,7 +18,8 @@ const RESTCall = () => {
     const getData = () => {
         // setCountries({name: 'USA'}); // WORKS
         fetch('https://restcountries.eu/rest/v2/all').then( (res) => {
-            console.log(res);
+            console.log(res); // Pending Promise
+            
             // ldata = res.clone().json();
             // console.log(ldata);
             // setCountries(ldata);
@@ -54,18 +54,20 @@ const RESTCall = () => {
           <textarea value={JSON.stringify(countries)} onChange={handleChange} />
         </Row>
         <Row>
+        <Col>
           <Button onClick={getData}>fetch data</Button>
-        </Row>
-        <Row>
+        </Col>
+        <Col>
           <Form>
             <Form.Group>
               <Form.Control type="textarea"></Form.Control>
             </Form.Group>
             <Form.Group controlId="countiesForm.CountryTextArea">
               <Form.Label>Countries</Form.Label>
-              <Form.Control as="textarea" rows="5" value={JSON.stringify(countries)} />
+              <Form.Control as="textarea" rows="5" value={JSON.stringify(countries)} onChange={handleChange} />
             </Form.Group>
           </Form>
+          </Col>
         </Row>
       </Container>
     );
